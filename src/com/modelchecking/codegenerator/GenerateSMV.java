@@ -2,6 +2,7 @@ package com.modelchecking.codegenerator;
 
 import com.modelchecking.basic.Function;
 import com.modelchecking.parser.ReadFiles;
+import com.modelchecking.utils.GetInfoFromAllfunctions;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,7 +49,12 @@ public class GenerateSMV {
      */
     public StringBuffer IVARGenerator(ArrayList<Function> AllFunctions){
         StringBuffer IVAR = new StringBuffer();
+        GetInfoFromAllfunctions getInfoFromAllfunctions = new GetInfoFromAllfunctions();
+        ArrayList<String> ivar = getInfoFromAllfunctions.GetInputVar(AllFunctions);
 
+        IVAR.append("IVAR\n");
+        for (String s : ivar)
+            IVAR.append("\t").append(s);
 
         return IVAR;
     }
@@ -60,7 +66,12 @@ public class GenerateSMV {
      */
     public StringBuffer VARGenerator(ArrayList<Function> AllFunctions){
         StringBuffer VAR = new StringBuffer();
+        GetInfoFromAllfunctions getInfoFromAllfunctions = new GetInfoFromAllfunctions();
+        ArrayList<String> var = getInfoFromAllfunctions.GetOutputVar(AllFunctions);
 
+        VAR.append("VAR\n");
+        for(String s : var)
+            VAR.append("\t").append(s);
 
         return VAR;
     }
