@@ -20,7 +20,7 @@ public class SUM {
     public StringBuffer _SUM_(String x1,String x2){
         SUM.append(String.valueOf(getK1())).append("*").append(x1)
                 .append(" + ").append(String.valueOf(getK2())).append("*").append(x2)
-                .append(" + ").append(String.valueOf(getC()));
+                .append(" + ").append(String.valueOf(getC())).append(";");
         return SUM;
     }
 

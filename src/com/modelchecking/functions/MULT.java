@@ -13,7 +13,7 @@ public class MULT {
     public StringBuffer _MULT_(String x1,String x2){
         MULT.append(String.valueOf("("+getK1())).append("*").append(x1).append(" + ").append(getC1())
             .append(") * (").append(getK2()).append("*").append(x2).append(" + ").append(getC2())
-                .append(")");
+                .append(");");
         return MULT;
     }
 
