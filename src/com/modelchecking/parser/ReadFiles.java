@@ -54,7 +54,7 @@ public class ReadFiles {
 
                 function = new Function();
                 String funname = m.group(0).substring(6, m.group(0).length() - 1);
-                System.out.println(funname);
+                //System.out.println(funname);
 
                 function.setFunName(funname);//为function属性赋值Name
                 function.setFunType(funname);//为function属性赋值Type

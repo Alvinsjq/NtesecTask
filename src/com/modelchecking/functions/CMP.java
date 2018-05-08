@@ -18,7 +18,7 @@ public class CMP {
      */
     public StringBuffer _CMP_(String x1,String x2){
         String modestring = getModeString(getMode());
-        CMP.append(x1).append(modestring).append(x2).append(" ? TRUE : FALSE;\n");
+        CMP.append(x1).append(" "+modestring+" ").append(x2).append(" ? TRUE : FALSE;");
         return CMP;
     }
 
@@ -26,7 +26,7 @@ public class CMP {
      * 获取HLLMT的smv的代码模版
      * @return
      */
-    public StringBuffer getHLLMT() {
+    public StringBuffer getCMP() {
         return CMP;
     }
 
@@ -49,7 +49,7 @@ public class CMP {
             case 1:
                 return "!=";
             case 2:
-                return "<=";
+                return ">=";
             case 3:
                 return "<=";
             case 4:

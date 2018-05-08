@@ -1,7 +1,10 @@
 package com.modelchecking.codegenerator;
 
 import com.modelchecking.basic.Function;
+import com.modelchecking.basic.Type;
 import com.modelchecking.parser.ReadFiles;
+import com.modelchecking.utils.ExpressionDeclare;
+import com.modelchecking.utils.ExpressionGenerate;
 import com.modelchecking.utils.GetInfoFromAllfunctions;
 
 import java.io.IOException;
@@ -34,10 +37,10 @@ public class GenerateSMV {
      * 这里负责smv模型名字的生成逻辑
      * @param
      */
-    public StringBuffer GetComplexFunctionCode(){
+    public StringBuffer GetModuleNameCode(){
         StringBuffer MODULE = new StringBuffer();
         String filestart = "MODULE main\n";
-        MODULE.append(filestart);
+        MODULE.append(filestart).append("\n");
         return MODULE;
     }
 
@@ -55,7 +58,7 @@ public class GenerateSMV {
         IVAR.append("IVAR\n");
         for (String s : ivar)
             IVAR.append("\t").append(s);
-
+        IVAR.append("\n");
         return IVAR;
     }
 
@@ -72,7 +75,7 @@ public class GenerateSMV {
         VAR.append("VAR\n");
         for(String s : var)
             VAR.append("\t").append(s);
-
+        VAR.append("\n");
         return VAR;
     }
 
@@ -83,8 +86,13 @@ public class GenerateSMV {
      */
     public StringBuffer DefineGenerator(ArrayList<Function> AllFunctions){
         StringBuffer DEFINE = new StringBuffer();
-
-
+        GetInfoFromAllfunctions getInfoFromAllfunctions = new GetInfoFromAllfunctions();
+        ArrayList<Function> FunctionsNeedDefined = getInfoFromAllfunctions.GetComputeFunctions(AllFunctions);
+        ExpressionGenerate expressionGenerate = new ExpressionGenerate();
+        DEFINE.append("DEFINE\n");
+        for (Function fd : FunctionsNeedDefined)
+            DEFINE.append("\t").append(expressionGenerate.getExpression(fd)); //分别生成等式
+        DEFINE.append("\n");
         return DEFINE;
     }
 
@@ -95,7 +103,18 @@ public class GenerateSMV {
      */
     public StringBuffer AssignGenerator(ArrayList<Function> AllFunctions){
         StringBuffer ASSIGN = new StringBuffer();
+        GetInfoFromAllfunctions getInfoFromAllfunctions = new GetInfoFromAllfunctions();
+        ArrayList<String> init = getInfoFromAllfunctions.GetInitVar(AllFunctions);
 
+        ASSIGN.append("ASSIGN\n");
+        for (String s : init)
+            ASSIGN.append("\t").append(s);
+        ExpressionGenerate exg = new ExpressionGenerate();
+        for(Function f : AllFunctions){
+            if(f.getFunType()== Type.Output){
+                ASSIGN.append(exg.getNextExpression(f));
+            }
+        }
 
         return ASSIGN;
     }
@@ -110,5 +129,6 @@ public class GenerateSMV {
 
         return LTLSPEC;
     }
+
 
 }

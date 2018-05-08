@@ -16,14 +16,14 @@ public class HLLMT {
      * @param high
      * @return
      */
-    public StringBuffer _HTTML_(String x,String low,String high){
+    public StringBuffer _HTTML_(String x,String high,String low){
         HLLMT.append("\n")
                 .append("\t\tcase\n")
                 .append("\t\t\t"+x+" >= "+low+" & "+x+" <= "+high+" : "+x+";\n")
                 .append("\t\t\t"+x+" < "+low+" : "+low+";\n")
                 .append("\t\t\t"+x+" > "+high+" : "+high+";\n")
-                .append("\t\tesac;\n")
-                .append("\n");
+                .append("\t\tesac;");
+
         return HLLMT;
     }
 
