@@ -82,12 +82,15 @@ public class ReadFiles {
                     String[] s = p.split(line);
                     ArrayList<String> Input = new ArrayList<String>();
 
-                    for (int i = 0; i < s.length-1; i++) {
+                    for (int i = 0; i < s.length; i++) {
                         s[i] = s[i].trim();
                         if (i == 0)
                             Input.add(s[0].substring(4, s[i].length()));
-                        else
-                            Input.add(s[i]);
+                        else{
+                            if(!s[i].equals(""))
+                                Input.add(s[i]);
+                        }
+
                     }
                     function.setInput(Input);//为function属性赋值Input
                 } else {
@@ -118,12 +121,16 @@ public class ReadFiles {
                             String[] s = p.split(line);
                             ArrayList<String> Output = new ArrayList<String>();
 
-                            for (int i = 0; i < s.length-1; i++) {
+                            for (int i = 0; i < s.length ; i++) {
                                 s[i] = s[i].trim();
                                 if (i == 0)
-                                    Output.add(s[i].substring(5, s[i].length()));
+                                    if(s[i].length() > 5)
+                                        Output.add(s[i].substring(5, s[i].length()));
+                                    else
+                                        break;
                                 else
-                                    Output.add(s[i]);
+                                    if(!s[i].equals(""))
+                                        Output.add(s[i]);
                             }
                             function.setOutput(Output);//为function属性赋值Output
                             function.setdatatype(function.getFunName());//为function属性赋值输入输出的数据类型
