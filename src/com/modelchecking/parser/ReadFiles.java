@@ -37,7 +37,7 @@ public class ReadFiles {
         while ((line = br.readLine()) != null) {
 //           System.out.println(line);
 
-            String func = "Func, [a-zA-Z]+,";
+            String func = "Func, [a-zA-Z0-9]+,";
             String id = "\\d+:";
             String page = "\\), \\d+";
             String In = "In=";
@@ -84,8 +84,11 @@ public class ReadFiles {
 
                     for (int i = 0; i < s.length; i++) {
                         s[i] = s[i].trim();
-                        if (i == 0)
+                        if (i == 0){
+                            if (s[0].length() == 3) break; //没有输入则停止
                             Input.add(s[0].substring(4, s[i].length()));
+                        }
+
                         else{
                             if(!s[i].equals(""))
                                 Input.add(s[i]);

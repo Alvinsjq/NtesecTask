@@ -1,0 +1,27 @@
+MODULE main
+
+IVAR
+	B1_0 : boolean;
+	B3_0 : boolean;
+	B6_0 : boolean;
+	B7_0 : boolean;
+	B11_0 : boolean;
+	B14_0 : boolean;
+	B15_0 : boolean;
+	B16_0 : boolean;
+
+VAR
+	B8_0 : boolean;
+
+DEFINE
+	B2_0 := B1_0 & B3_0;
+	B4_0 := B2_0 | B5_0;
+	B5_0 := B6_0 xor B7_0;
+	B10_0 := ! B11_0;
+	B13_0 := B10_0 & B14_0 & B15_0 & B16_0;
+	B17_0 := B4_0 xor B13_0;
+
+ASSIGN
+	init(B8_0) := FALSE;
+	next(B8_0) := B17_0;
+

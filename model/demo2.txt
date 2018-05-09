@@ -7,57 +7,57 @@ Project=
 Page, 1:2 50 x10ms, 0
         Description=
 	Func, MULT, 1:10, (760,320), 1
-		  In= B4-0 , B5-0 ,
+		  In= B4-0 , B5-0 , 
 		Para= 1,2,0,1,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, MULT, 2:20, (760,480), 1
-		  In= B6-0 , B7-0 ,
+		  In= B6-0 , B7-0 , 
 		Para= 1,2,1,0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, SUM, 3:30, (1000,420), 1
-		  In= B1-0 , B2-0 ,
+		  In= B1-0 , B2-0 , 
 		Para= 2,1,1,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, AI, 4:40, (500,310), 1
-		  In= Null ,
+		  In= Null , 
 		Para= 65535,0,49152,36044,0,0,100,0,0,0,$$Null,256,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,5,0,0,0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, AI, 5:50, (500,380), 1
-		  In= Null ,
+		  In= Null , 
 		Para= 65535,0,49152,36044,0,0,100,0,0,0,$$Null,256,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,5,0,0,0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, AI, 6:60, (480,480), 1
-		  In= Null ,
+		  In= Null , 
 		Para= 65535,0,49152,36044,0,0,100,0,0,0,$$Null,256,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,5,0,0,0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, AI, 7:70, (480,540), 1
-		  In= Null ,
+		  In= Null , 
 		Para= 65535,0,49152,36044,0,0,100,0,0,0,$$Null,256,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,5,0,0,0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, HLLMT, 8:80, (1220,420), 1
-		  In= B3-0 , 10f , -10f ,
-		Para=
-		 Out= 0 ,
+		  In= B3-0 , 10f , -10f , 
+		Para= 
+		 Out= 0 , 
 	FuncEnd
 	Func, CMP, 9:90, (1400,550), 1
-		  In= B8-0 , B12-0 ,
+		  In= B8-0 , B12-0 , 
 		Para= 0,
-		 Out= 0 ,
+		 Out= 0 , 
 	FuncEnd
 	Func, DO, 10:100, (1640,580), 1
-		  In= B9-0 ,
+		  In= B9-0 , 
 		Para= 65535,0,0,$$Null,256,0,0,0,5,0,
-		 Out=
+		 Out= 
 	FuncEnd
 	Func, AI, 12:120, (1100,630), 1
-		  In= Null ,
+		  In= Null , 
 		Para= 65535,0,49152,36044,0,0,100,0,0,0,$$Null,256,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,5,0,0,0,
 		 Out= 0 , 
 	FuncEnd

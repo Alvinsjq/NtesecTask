@@ -48,7 +48,7 @@ public class GetInfoFromAllfunctions {
                     outputvars.add("B"+f.getFunID()+"_0 : boolean;\n");
                 else if(datatype.equals("int"))
                     //这里的integer类型的值暂且设置为区间长度为20，防止变量过多引起模型状态爆炸
-                    outputvars.add("B"+f.getFunID()+"_0 : -10..10;\n");
+                    outputvars.add("B"+f.getFunID()+"_0 : -20..20;\n");
             }
         }
         return outputvars;

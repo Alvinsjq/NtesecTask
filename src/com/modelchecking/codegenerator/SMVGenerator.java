@@ -11,9 +11,9 @@ import java.io.IOException;
 public class SMVGenerator {
     BufferedWriter bw = null;
 
-    public void GenerateSmvFile(){
+    public void GenerateSmvFile(String filepath){
 
-        GenerateSMV generateSMV = new GenerateSMV();
+        GenerateSMV generateSMV = new GenerateSMV(filepath);
         StringBuffer modulebuffer = new StringBuffer();
 
         StringBuffer Name = generateSMV.GetModuleNameCode();
@@ -31,7 +31,11 @@ public class SMVGenerator {
         String smv = modulebuffer.toString();
 
         try {
-            File file = new File("gen_smv/main.smv");
+
+
+
+
+            File file = new File(getfilename(filepath)+".smv");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -40,7 +44,7 @@ public class SMVGenerator {
 
             bw = new BufferedWriter(fw);
             bw.write(smv);
-            System.out.println("生成smv文件！");
+            System.out.println("Generate "+getfilename(filepath)+".smv Successfully!");
         }catch (IOException e){
             e.printStackTrace();
         }finally {
@@ -54,5 +58,17 @@ public class SMVGenerator {
         }
 
 
+    }
+
+
+    public String getfilename(String filepath){
+        int end = 0;
+        for(int i=0;i<filepath.length();i++){
+            if(filepath.charAt(i)=='.') {
+                end = i;
+                break;
+            }
+        }
+        return filepath.substring(0,end);
     }
 }

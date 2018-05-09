@@ -1,10 +1,7 @@
 package com.modelchecking.utils;
 
 import com.modelchecking.basic.Function;
-import com.modelchecking.functions.CMP;
-import com.modelchecking.functions.HLLMT;
-import com.modelchecking.functions.MULT;
-import com.modelchecking.functions.SUM;
+import com.modelchecking.functions.*;
 
 import java.util.ArrayList;
 
@@ -70,8 +67,56 @@ public class ExpressionDeclare {
                 mult.setC2(parameters.get(3));
                 mult._MULT_(varlist.get(0),varlist.get(1));
                 rightexp.append(mult.getMULT());
+                break;
 
+            case "DIV":
+                DIV div = new DIV();
+                div.setK1(parameters.get(0));
+                div.setK2(parameters.get(1));
+                div.setC1(parameters.get(2));
+                div.setC2(parameters.get(3));
+                div._DIV_(varlist.get(0),varlist.get(1));
+                rightexp.append(div.getDIV());
+                break;
+
+            case "AND":
+                AND and = new AND();
+                and._AND_(varlist.get(0),varlist.get(1));
+                rightexp.append(and.getAND());
+                break;
+            case "AND4":
+                AND4 and4 = new AND4();
+                and4._AND4_(varlist.get(0),varlist.get(1),varlist.get(2),varlist.get(3));
+                rightexp.append(and4.getAND4());
+                break;
+            case "NOT":
+                NOT not = new NOT();
+                not._NOT_(varlist.get(0));
+                rightexp.append(not.getNOT());
+                break;
+            case "OR":
+                OR or = new OR();
+                or._OR_(varlist.get(0),varlist.get(1));
+                rightexp.append(or.getOR());
+                break;
+            case "OR4":
+                OR4 or4 = new OR4();
+                or4._OR4_(varlist.get(0),varlist.get(1),varlist.get(2),varlist.get(3));
+                rightexp.append(or4.getOR4());
+                break;
+            case "XOR":
+                XOR xor = new XOR();
+                xor._XOR_(varlist.get(0),varlist.get(1));
+                rightexp.append(xor.getXOR());
+                break;
             //...可以扩展更多的功能块
+            case "ABS":
+                ABS abs = new ABS();
+                abs.setK(parameters.get(0));
+                abs.setC(parameters.get(1));
+                abs._ABS_(varlist.get(0));
+                rightexp.append(abs.getABS());
+                break;
         }
 
         return rightexp;

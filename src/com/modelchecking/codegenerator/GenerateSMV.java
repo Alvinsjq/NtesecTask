@@ -17,15 +17,15 @@ public class GenerateSMV {
 
     public ArrayList<Function> AllFunctions;
 
-    public GenerateSMV() {
+    public GenerateSMV(String filepath) {
         //构造函数初始化得到所有的功能计算模块
-        GetAllFunctions();
+        GetAllFunctions(filepath);
     }
 
-    public void GetAllFunctions(){
+    public void GetAllFunctions(String filepath){
         ReadFiles rf = new ReadFiles();
         try {
-            rf.ReadFile("model/demo.txt");
+            rf.ReadFile(filepath);
         } catch (IOException e) {
             e.printStackTrace();
         }

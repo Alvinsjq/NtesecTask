@@ -34,7 +34,28 @@ public class NameUtils {
             case "DO":
                 return Type.Output;
 
+            case "AO":
+                return Type.Output;
+
             //可以继续添加其他的功能模块名
+            case "DIV":
+                return Type.Basic;
+            case "AND":
+                return Type.Basic;
+            case "AND4":
+                return Type.Basic;
+            case "OR":
+                return Type.Basic;
+            case "OR4":
+                return Type.Basic;
+            case "NOT":
+                return Type.Basic;
+            case "XOR":
+                return Type.Basic;
+            case "DI":
+                return Type.Input;
+            case "ABS":
+                return Type.Basic;
         }
 
         return Type.Basic;
@@ -51,6 +72,8 @@ public class NameUtils {
         String bool = "boolean";
         String inter = "int";
         switch (function){
+
+            //模拟计算
             case "SUM":
                 datatype[0] = inter;
                 datatype[1] = inter;
@@ -71,15 +94,57 @@ public class NameUtils {
                 datatype[1] = bool;
                 break;
 
-            case "AI":
+            case "DIV":
                 datatype[0] = inter;
                 datatype[1] = inter;
                 break;
 
+            //输入输出
+            case "AI":
+                datatype[0] = inter;
+                datatype[1] = inter;
+                break;
+            case "AO":
+                datatype[0] = inter;
+                datatype[1] = inter;
+                break;
             case "DO":
                 datatype[0] = bool;
                 datatype[1] = bool;
                 break;
+            case "DI":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+
+            //逻辑操作
+            case "AND":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "XOR":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "NOT":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "OR":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "AND4":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "OR4":
+                datatype[0] = bool;
+                datatype[1] = bool;
+                break;
+            case "ABS":
+                datatype[0] = inter;
+                datatype[1] = inter;
         }
 
         return datatype;

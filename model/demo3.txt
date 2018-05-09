@@ -1,0 +1,84 @@
+Xcu File
+Version=1.0.14
+Drop=1
+Description=
+Project=
+
+Page, 1:2 50 x10ms, 0
+        Description=
+	Func, DI, 1:10, (540,340), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, AND, 2:20, (780,320), 1
+		  In= B1-0 , B3-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 3:30, (540,360), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, OR, 4:40, (1040,440), 1
+		  In= B2-0 , B5-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+	Func, XOR, 5:50, (780,490), 1
+		  In= B6-0 , B7-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 6:60, (520,570), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 7:70, (520,590), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, DO, 8:80, (1480,580), 1
+		  In= B17-0 , 
+		Para= 65535,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 
+	FuncEnd
+	Func, NOT, 10:100, (760,650), 1
+		  In= B11-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 11:110, (520,670), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, AND4, 13:130, (1000,650), 1
+		  In= B10-0 , B14-0 , B15-0 , B16-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 14:140, (520,750), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 15:150, (520,800), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, DI, 16:160, (520,850), 1
+		  In= 
+		Para= 65535,0,0,0,$$Null,256,0,0,0,5,0,
+		 Out= 0 , 
+	FuncEnd
+	Func, XOR, 17:170, (1300,560), 1
+		  In= B4-0 , B13-0 , 
+		Para= 
+		 Out= 0 , 
+	FuncEnd
+PageEnd
