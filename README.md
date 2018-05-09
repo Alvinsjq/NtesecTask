@@ -5,13 +5,24 @@
 
 - 模拟功能集
     + SUM
-    +
-    +
+    + MULT
+    + DIV
+    + HLLMT
+
 - 逻辑功能
-    +
+    + AND
+    + AND4
+    + OR
+    + OR4
+    + NOT
+    + XOR
+    + CMP
 
 - 输入输出信号
-
+    + AI
+    + AO
+    + DI
+    + DO
 
 
 更多操作符的支持需要在以下文件中增加：

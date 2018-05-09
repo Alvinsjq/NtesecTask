@@ -32,9 +32,6 @@ public class SMVGenerator {
 
         try {
 
-
-
-
             File file = new File(getfilename(filepath)+".smv");
             if(!file.exists()){
                 file.createNewFile();
