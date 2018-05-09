@@ -8,6 +8,7 @@
     + MULT
     + DIV
     + HLLMT
+    + ABS
 
 - 逻辑功能
     + AND
@@ -23,7 +24,6 @@
     + AO
     + DI
     + DO
-
 
 更多操作符的支持需要在以下文件中增加：
 1. NameUtils (尤其输入输出)
